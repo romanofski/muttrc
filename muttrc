@@ -1,0 +1,68 @@
+set hdrs
+ignore *
+unignore From: From Date: To: Cc: Subject: Content-Length: Lines: X-Bogosity: X-Mailer:
+hdr_order From: From Date: To: Cc: Content-Length: Lines: X-Mailer: X-Bogosity: Subject: 
+
+set query_command = 'lbdbq %s'
+set sort_aux=date-received #sort threads by date received
+set editor="vim -c 'set tw=72' -f +8"
+set nomark_old #don't mark unread new msgs as old
+set noconfirmappend #just append.. dont ask
+set quote_regexp="^([A-Za-z ]+>|[]>:|}-][]>:|}-]*)"
+set index_format="%4C %S [%{%b/%d %H:%M}] %-20.20L (%4l) %s"
+set nosave_name 	#dont save outgoing messages by recipient
+set noforce_name	#fcc by recipient, Don't create if mailbox doesn't exist
+set fast_reply
+set read_inc=50
+set write_inc=50
+set delete=yes
+set pager_stop
+set nomove #old Messages in inbox
+set ignore_list_reply_to = yes # fix broken mailinglist software
+set mailcap_path=~/.mutt/mailcap
+set header_cache=~/.mutt/headers
+# set sendmail="/usr/bin/esmtp -v -X /tmp/esmtp.log"
+set use_envelope_from=yes
+
+# printing
+set print_command="recode UTF-8..Latin-1 | a2ps -1gEmail --borders=no --strip=3"
+
+set send_charset=utf-8
+fcc-hook ~A =Sent
+folder-hook =Sent 'set index_format="%Z %{%b %d} %-30.30t %s"'
+
+#
+# Settings
+#
+
+# source ~/.mutt/aliases
+
+# which format and attachment should be auto viewed?
+source ~/.mutt/auto_views
+
+# mailbox specifc behaviours
+source ~/.mutt/mailboxes
+
+# color defines
+source ~/.mutt/colors
+
+# pgp
+source ~/.mutt/pgp
+
+# customisations
+source ~/.mutt/customisations
+
+# so that attachments get forwarded as well
+set mime_forward=yes
+set mime_forward_rest=yes
+
+#
+# Macros/Key bindings
+#
+bind generic    0 first-entry
+bind pager      0 top
+bind generic    G last-entry
+bind index      G last-entry
+bind pager      G bottom
+
+macro index S "<shell-escape>mairix&<enter><change-folder-readonly>=mfolder\n<shell-escape>mairix" "Run a mairix search"

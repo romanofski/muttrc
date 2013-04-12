@@ -1,0 +1,19 @@
+# -*- muttrc -*-
+
+# Start off with index footer in pager.
+set pager_index_lines=6
+
+# Reset any headers that may have been set in other folder-hooks
+unmy_hdr From:
+unmy_hdr Fcc:
+unmy_hdr Organization:
+unmy_hdr X-URL:
+
+# This is the index format for non-list folders.
+set index_format="%4C %Z %{%b %d} %-15.15L (%4l) %s"
+
+# Sort by date-sent
+set sort=threads
+
+# Prefer TEXT over HTML in multipart mails
+message-hook    ~A  "unalternative_order *; alternative_order  text/plain text/html application/msword application/vnd.msword"

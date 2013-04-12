@@ -1,0 +1,15 @@
+# -*- muttrc -*-
+#
+# List of folders that are considered to be "mailboxes" (folders that
+# receive incoming mail).
+#
+set mbox_type=Maildir
+set folder=$HOME/Maildir/
+set spoolfile=$HOME/Maildir/INBOX
+set postponed=+postponed
+set folder_format="%2C %t %N %F %2l %-8.8u %d %f"
+set imap_list_subscribed="yes"
+
+# cd ~/Maildir && find ./ -type d !  -regex ".*\(cur\|new\|tmp\)$" -printf "=%P "
+mailboxes =INBOX
+macro index <left> ':mailboxes <enter>c?<toggle-mailboxes>
