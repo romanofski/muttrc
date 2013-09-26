@@ -21,5 +21,7 @@ macro   compose \CP             "Fgpg --clearsign\ny"
 
 # deprecated?
 # set pgp_replyencrypt = yes
-set pgp_autosign=no
+set pgp_autosign=yes
+set crypt_verify_sig=yes
+set crypt_replysign
 
