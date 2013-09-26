@@ -45,7 +45,7 @@ source ~/.mutt/auto_views
 source ~/.mutt/mailboxes
 
 # color defines
-source ~/.mutt/colors
+source ~/works/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
 
 # pgp
 source ~/.mutt/pgp
@@ -65,4 +65,4 @@ bind generic    G last-entry
 bind index      G last-entry
 bind pager      G bottom
 
-macro index S "<shell-escape>mairix&<enter><change-folder-readonly>=mfolder\n<shell-escape>mairix" "Run a mairix search"
+macro index,pager S "<shell-escape>[[ -d ~/.mu/results ]] && rm -r ~/.mu/results; mkdir -p ~/.mu/results/cur ~/.mu/results/new ~/.mu/results/tmp\n<change-folder-readonly>~/.mu/results\n<shell-escape>mu find --format=links --linksdir ~/.mu/results --clearlinks  " "mu-find"
