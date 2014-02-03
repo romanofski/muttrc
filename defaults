@@ -17,3 +17,4 @@ set sort=threads
 
 # Prefer TEXT over HTML in multipart mails
 message-hook    ~A  "unalternative_order *; alternative_order  text/plain text/html application/msword application/vnd.msword"
+my_hdr From: Róman Joost <roman@bromeco.de>
