@@ -50,6 +50,9 @@ source ~/works/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
 # pgp
 source ~/.mutt/pgp
 
+# notmuch
+source ~/.mutt/notmuch
+
 # customisations
 source ~/.mutt/customisations
 
@@ -65,4 +68,4 @@ bind generic    G last-entry
 bind index      G last-entry
 bind pager      G bottom
 
-macro index,pager S "<shell-escape>[[ -d ~/.mu/results ]] && rm -r ~/.mu/results; mkdir -p ~/.mu/results/cur ~/.mu/results/new ~/.mu/results/tmp\n<change-folder-readonly>~/.mu/results\n<shell-escape>mu find --format=links --linksdir ~/.mu/results --clearlinks  " "mu-find"
+macro pager \cb 'urlview' 'Follow links with urlview'

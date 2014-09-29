@@ -1,0 +1,11 @@
+set nm_record = yes
+set nm_record_tags = "-inbox,archive"
+
+set nm_default_uri="notmuch:///home/rjoost/Maildir"
+set virtual_spoolfile = yes
+
+virtual-mailboxes \
+    "INBOX"     "notmuch://?query=tag:inbox and NOT tag:archive"
+
+macro index,pager S "<modify-labels-then-hide>+archive -inbox\n<sync-mailbox>"
+macro index <left> "<change-vfolder>"
