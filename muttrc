@@ -68,4 +68,4 @@ bind generic    G last-entry
 bind index      G last-entry
 bind pager      G bottom
 
-macro pager \cb 'urlview' 'Follow links with urlview'
+macro generic \cb 'urlview' 'Follow links with urlview'
