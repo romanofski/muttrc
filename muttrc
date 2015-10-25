@@ -45,7 +45,7 @@ source ~/.mutt/auto_views
 source ~/.mutt/mailboxes
 
 # color defines
-source ~/works/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
+source ~/.mutt/colors
 
 # pgp
 source ~/.mutt/pgp
