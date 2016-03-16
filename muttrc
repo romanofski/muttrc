@@ -3,7 +3,7 @@ ignore *
 unignore From: From Date: To: Cc: Subject: Content-Length: Lines: X-Bogosity: X-Mailer:
 hdr_order From: From Date: To: Cc: Content-Length: Lines: X-Mailer: X-Bogosity: Subject: 
 
-set query_command = 'lbdbq %s'
+set query_command = 'lbdbq %s 2> /dev/null'
 set sort_aux=date-received #sort threads by date received
 set editor="vim -c 'set tw=72' -f +8"
 set nomark_old #don't mark unread new msgs as old
